@@ -42,7 +42,7 @@ which is easier to read and fits nicely without wrapping or robbing context
 
 # usage
 
-`npm install simple-stacktrace`
+`npm install --save-dev simple-stacktrace`
 
 in your tests, to get what I have above for example, you would use:
 
