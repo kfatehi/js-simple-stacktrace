@@ -4,28 +4,31 @@ module.exports = function (insaneOptions) {
   var options = insaneOptions || {};
   options.height = parseInt(options.height) || 6;
   options.node_modules = !!options.node_modules;
-  var appRoot = require('path').resolve(__dirname, '..')+'/';
   console.oldError = global.SimpleStacktraceReloaderFix || console.error;
   console.error = function (args) {
     if (typeof arguments.stack !== 'undefined') {
       console.oldError.call(console, arguments.stack);
     } else {
       if (typeof arguments[4] !== 'undefined') {
-        var traceToShow = arguments[4].split('\n')
+        var trace = arguments[4].split('\n')
+
         if (options.node_modules === false) {
           newTrace = [];
-          for (var i = 0, l = traceToShow.length; i < l; i ++) {
-            var line = traceToShow[i];
+          for (var i = 0, l = trace.length; i < l; i ++) {
+            var line = trace[i];
+
             if (! line.match('node_modules/')) {
               newTrace.push(line);
             }
           }
-          traceToShow = newTrace;
+          trace = newTrace;
         }
-        arguments[4] = traceToShow
-        .slice(0, options.height)
-        .join('\n')
-        .replace(RegExp(appRoot, 'g'), '');
+
+        trace = trace.slice(0, options.height).join('\n');
+
+        trace = trace.replace(RegExp(options.root, 'g'), '');
+
+        arguments[4] = trace;
       }
       console.oldError.apply(console, arguments);
     }

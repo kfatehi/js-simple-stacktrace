@@ -48,13 +48,14 @@ in your tests, to get what I have above for example, you would use:
 
 ```
 require('simple-stacktrace')({
-  height: 4,
-  node_modules: false
+  root: require('path').resolve(__dirname, '..'),
 })
 ```
 
 ## options
 
+`root`: define where the root of your project lives if you want it to be stripped
+
 `height`: controls the maximum height of the stack trace. defaults to `6`
 
-`node_modules`: a `false` value hides any line that contains the string node_modules/ effectively hiding stack traces that occur outside your module. defaults to `true`
+`node_modules`: a `false` value hides any line that contains the string node_modules/ effectively hiding stack traces that occur outside your module. defaults to `false`
