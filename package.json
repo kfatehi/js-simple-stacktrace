@@ -1,0 +1,22 @@
+{
+  "name": "simple-stacktrace",
+  "version": "0.0.1",
+  "description": "simpler stacktraces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keyvanfatehi/js-simple-stacktrace.git"
+  },
+  "keywords": [
+    "stacktrace"
+  ],
+  "author": "Keyvan Fatehi <keyvanfatehi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keyvanfatehi/js-simple-stacktrace/issues"
+  },
+  "homepage": "https://github.com/keyvanfatehi/js-simple-stacktrace"
+}
