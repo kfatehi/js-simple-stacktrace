@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var doctor = require('../doctor')({
+  root: process.cwd()
+});
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', function(chunk) {
+  process.stdout.write(doctor(chunk))
+});
+
