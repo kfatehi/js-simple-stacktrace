@@ -40,19 +40,27 @@ to something more like this:
 
 which is easier to read and fits nicely without wrapping or robbing context
 
+# install
+
+`npm install simple-stacktrace`
+
 # usage
 
-`npm install --save-dev simple-stacktrace`
+`mocha -w ./test/ 2>&1 | simple-stacktrace`
 
-in your tests, to get what I have above for example, you would use:
+## options
+
+These are passed in for you automatically when using the pipe form above. If you wish, you can use the following form.
 
 ```
 require('simple-stacktrace')({
   root: require('path').resolve(__dirname, '..'),
+  height: 4
 })
 ```
 
-## options
+This may be preferred for additional configuration, although in this case it would be better to expand on the `simple-stacktrace` binary and allow it to accept these options:
+
 
 `root`: define where the root of your project lives if you want it to be stripped
 
