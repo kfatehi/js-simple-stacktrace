@@ -54,8 +54,7 @@ These are passed in for you automatically when using the pipe form above. If you
 
 ```
 require('simple-stacktrace')({
-  root: require('path').resolve(__dirname, '..'),
-  height: 4
+  root: require('path').resolve(__dirname, '..')
 })
 ```
 
@@ -63,7 +62,5 @@ This may be preferred for additional configuration, although in this case it wou
 
 
 `root`: define where the root of your project lives if you want it to be stripped
-
-`height`: controls the maximum height of the stack trace. defaults to `6`
 
 `node_modules`: a `false` value hides any line that contains the string node_modules/ effectively hiding stack traces that occur outside your module. defaults to `false`

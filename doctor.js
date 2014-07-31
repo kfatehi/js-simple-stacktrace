@@ -14,7 +14,7 @@ module.exports = function(insaneOptions) {
       }
       trace = newTrace;
     }
-    trace = trace.slice(0, options.height).join('\n');
+    trace = trace.join('\n')
     trace = trace.replace(RegExp(options.root, 'g'), '');
     return trace;
   }

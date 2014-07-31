@@ -1,6 +1,6 @@
 {
   "name": "simple-stacktrace",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "simpler stacktraces",
   "main": "index.js",
   "bin": "./bin/simple-stacktrace",
