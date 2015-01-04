@@ -42,7 +42,7 @@ which is easier to read and fits nicely without wrapping or robbing context
 
 # install
 
-`npm install simple-stacktrace`
+`npm install -g simple-stacktrace`
 
 # usage
 
