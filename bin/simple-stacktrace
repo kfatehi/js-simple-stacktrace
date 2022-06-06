@@ -1,6 +1,9 @@
 #!/usr/bin/env node
+const [path, file, height ] = process.argv;
 var doctor = require('../doctor')({
-  root: process.cwd()
+  root: process.cwd(),
+  node_modules:false,
+  height 
 });
 
 process.stdin.resume();
